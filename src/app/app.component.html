@@ -1,6 +1,22 @@
 <h1>Welcome to Mud Game!</h1>
-<div>
+<div class="div1">
 
+    <div class="div2">
+        <h1>Menu home page!</h1>
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <a [routerLink]="['/create/monster']">Create/Design</a>
+            </li>
+
+            <li>
+                <a [routerLink]="['/admin']">Admin</a>
+            </li>
+        </ul>
+    </nav>
+    <app-home></app-home>
 </div>
-<app-home></app-home>
-<router-outlet></router-outlet>
+<div>
+    <router-outlet></router-outlet>
+</div>

@@ -24,6 +24,7 @@ import { RoomDisplayComponent } from './Room/room-display/room-display.component
 import { RoomListComponent } from './Room/room-list/room-list.component';
 import { RoomViewComponent } from './Room/room-view/room-view.component';
 import { HomeComponent } from './Home/home/home.component';
+import { CreateComponent } from './Create/create/create.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { HomeComponent } from './Home/home/home.component';
     RoomDisplayComponent,
     RoomListComponent,
     RoomViewComponent,
-    HomeComponent
+    HomeComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
