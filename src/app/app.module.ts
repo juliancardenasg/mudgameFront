@@ -3,8 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MonsterViweComponent } from './monster/monster-viwe/monster-viwe.component';
-import { MonsterViewComponent } from './monster/monster-view/monster-view.component';
+import { MonsterViewComponent } from './Monster/monster-view/monster-view.component';
 import { MonsterCreateComponent } from './Monster/monster-create/monster-create.component';
 import { MonsterDisplayComponent } from './Monster/monster-display/monster-display.component';
 import { MonsterListComponent } from './Monster/monster-list/monster-list.component';
@@ -29,7 +28,6 @@ import { HomeComponent } from './Home/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MonsterViweComponent,
     MonsterViewComponent,
     MonsterCreateComponent,
     MonsterDisplayComponent,
