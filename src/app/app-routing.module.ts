@@ -10,26 +10,23 @@ import { MonsterDisplayComponent } from './Monster/monster-display/monster-displ
 import { RoomCreateComponent } from './Room/room-create/room-create.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  { path: '', component: HomeComponent },
 
-  {path: 'create', component: CreateComponent, 
-  children: [
-    {path: 'monster', component: MonsterCreateComponent,
-     children:[
-      {path: 'show/:id', component: MonsterDisplayComponent},
-      {path: 'create', component: MonsterCreateComponent}
-    ]},
-    {path: 'item', component: ItemCreateComponent},
-    {path: 'decorativeobject', component: DecorativeobjectCreateComponent},
-    {path: 'room', component: RoomCreateComponent},
-  ]
-},
-//{path: 'admin', component: Admi}
+  { path: 'create', component: CreateComponent, children:[
+    { path: 'item', component: ItemCreateComponent },
+    { path: 'room', component: RoomCreateComponent },
+    { path: 'monster', component: MonsterCreateComponent },
+    { path: 'decorativeObject', component: DecorativeobjectCreateComponent },
+  ]},
 
+  { path: 'item', component: ItemCreateComponent },
+  { path: 'decorativeobject', component: DecorativeobjectCreateComponent },
+  { path: 'room', component: RoomCreateComponent },
 ];
+//{path: 'admin', component: Admi}
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
