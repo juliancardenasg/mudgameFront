@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MonsterViewComponent } from './Monster/monster-view/monster-view.component';
@@ -25,6 +24,7 @@ import { RoomListComponent } from './Room/room-list/room-list.component';
 import { RoomViewComponent } from './Room/room-view/room-view.component';
 import { HomeComponent } from './Home/home/home.component';
 import { CreateComponent } from './Create/create/create.component';
+import { MenuMonsterComponent } from './Menu/menu-monster/menu-monster.component';
 
 @NgModule({
   declarations: [
@@ -50,13 +50,11 @@ import { CreateComponent } from './Create/create/create.component';
     RoomListComponent,
     RoomViewComponent,
     HomeComponent,
-    CreateComponent
+    CreateComponent,
+    MenuMonsterComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
