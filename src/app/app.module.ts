@@ -25,6 +25,7 @@ import { RoomViewComponent } from './Room/room-view/room-view.component';
 import { HomeComponent } from './Home/home/home.component';
 import { CreateComponent } from './Create/create/create.component';
 import { MenuMonsterComponent } from './Menu/menu-monster/menu-monster.component';
+import { MenuRoomComponent } from './Menu/menu-room/menu-room.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { MenuMonsterComponent } from './Menu/menu-monster/menu-monster.component
     HomeComponent,
     CreateComponent,
     MenuMonsterComponent,
+    MenuRoomComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

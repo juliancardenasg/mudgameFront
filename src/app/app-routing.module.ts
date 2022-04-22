@@ -4,7 +4,11 @@ import { CreateComponent } from './Create/create/create.component';
 import { DecorativeobjectCreateComponent } from './DecorativeObject/decorativeobject-create/decorativeobject-create.component';
 import { HomeComponent } from './Home/home/home.component';
 import { ItemCreateComponent } from './Item/item-create/item-create.component';
+import { ItemDisplayComponent } from './Item/item-display/item-display.component';
+import { ItemListComponent } from './Item/item-list/item-list.component';
+import { ItemViewComponent } from './Item/item-view/item-view.component';
 import { MenuMonsterComponent } from './Menu/menu-monster/menu-monster.component';
+import { MenuRoomComponent } from './Menu/menu-room/menu-room.component';
 import { Decorativeobject } from './model/decorativeobject';
 import { MonsterCreateComponent } from './Monster/monster-create/monster-create.component';
 import { MonsterDisplayComponent } from './Monster/monster-display/monster-display.component';
@@ -27,14 +31,19 @@ const routes: Routes = [
       { path: 'view', component: RoomViewComponent },
     ]},
 
-
     { path: 'menuMonster', component: MenuMonsterComponent, children:[
       { path: 'display', component: MonsterDisplayComponent },
       { path: 'list', component: MonsterListComponent },
       { path: 'view', component: MonsterViewComponent }]},
+      
   ]},
 
-  { path: 'item', component: ItemCreateComponent },
+  { path: 'item', component: ItemCreateComponent, children:[
+    { path: 'create', component: ItemCreateComponent },
+    { path: 'display', component: ItemDisplayComponent },
+    { path: 'list', component: ItemListComponent },
+    { path: 'view', component: ItemViewComponent },
+  ]},
 
 
   { path: 'decorativeobject', component: DecorativeobjectCreateComponent },
