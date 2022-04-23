@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Monster } from '../../model/monster';
 
 @Component({
   selector: 'app-monster-display',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MonsterDisplayComponent implements OnInit {
 
-  constructor() { }
+  monster: Monster = new Monster(0,"Julian","",0,0,0,0,"","");
+
+  // constructor(
+  //   private monsterService: MonsterService,
+  //   private route: ActivatedRoute,
+  //   private location: Location
+  // ) { }
+
 
   ngOnInit(): void {
   }
