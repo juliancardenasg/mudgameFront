@@ -8,7 +8,7 @@ import { Monster } from '../../model/monster';
 })
 export class MonsterDisplayComponent implements OnInit {
 
-  monster: Monster = new Monster(0,"Julian","",0,0,0,0,"","");
+  monster: Monster = new Monster(0,"Julian","gey",0,0,0,0,"","");
 
   // constructor(
   //   private monsterService: MonsterService,

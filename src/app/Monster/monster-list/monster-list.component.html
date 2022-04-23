@@ -1,1 +1,7 @@
-<p>monster-list works!</p>
+
+<h2>lista:</h2>
+<ul>
+    <li *ngFor="let monster of monsterList; let i = index">
+        <a [routerLink]="['/create/monster/display',monster.id]">{{monster.name}}</a>
+    </li>
+</ul>
