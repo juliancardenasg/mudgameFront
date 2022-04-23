@@ -26,6 +26,8 @@ import { HomeComponent } from './Home/home/home.component';
 import { CreateComponent } from './Create/create/create.component';
 import { MenuMonsterComponent } from './Menu/menu-monster/menu-monster.component';
 import { MenuRoomComponent } from './Menu/menu-room/menu-room.component';
+import { MenuItemComponent } from './Menu/menu-item/menu-item.component';
+import { MenuDecorativeObjectComponent } from './Menu/menu-decorative-object/menu-decorative-object.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { MenuRoomComponent } from './Menu/menu-room/menu-room.component';
     CreateComponent,
     MenuMonsterComponent,
     MenuRoomComponent,
+    MenuItemComponent,
+    MenuDecorativeObjectComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
