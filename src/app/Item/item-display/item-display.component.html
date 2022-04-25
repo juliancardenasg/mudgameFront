@@ -1,1 +1,23 @@
-<p>item-display works!</p>
+<div class="div1">
+
+    <h2>Currently displaying: {{item?.name}}</h2>
+
+    <TABLE BORDER WIDTH="50%" HEIGHT="25%">
+        <TR>
+            <TD BGCOLOR="C0C0C0">id</TD> <TD BGCOLOR="C0C0C0">{{item?.id}}</TD>
+        </TR>
+        <TR>
+            <TD>Last updated</TD><TD>{{item?.lastUpdate}}</TD>
+        </TR>
+        <TR>
+            <TD BGCOLOR="C0C0C0">Cost</TD><TD BGCOLOR="C0C0C0">{{item?.cost}}</TD>
+        </TR>
+        <TR>
+            <TD>Weight</TD><TD>{{item?.weight}}</TD>
+        </TR>
+        <TR>
+            <TD BGCOLOR="C0C0C0">Examine</TD><TD BGCOLOR="C0C0C0">{{item?.examine}}</TD>
+        </TR>
+    </TABLE>
+
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from 'src/app/model/item';
 
 @Component({
   selector: 'app-item-display',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemDisplayComponent implements OnInit {
 
+  item: Item = new Item(0,"","",0,0,"","");
   constructor() { }
 
   ngOnInit(): void {
