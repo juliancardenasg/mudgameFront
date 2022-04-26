@@ -9,12 +9,17 @@ import { Monster } from '../model/monster';
 export class MonsterService {
 
   constructor(
-    private http: HttpClient,
+    private http: HttpClient
   ) { }
 
   findAll(): Observable<Monster[]>{
     
-    return this.http.get<Monster[]>("http://localhost:8090/monster/list");
+    return this.http.get<Monster[]>("http://localhost:8090/monster/all");
 
   }
+
+  findById(id: number): Observable<Monster>{
+    return this.http.get<Monster>("http://localhost:8090/monster/"+ id +"/get");
+  }
+
 }

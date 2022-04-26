@@ -37,13 +37,13 @@ const routes: Routes = [
 
     { path: 'menuMonster', component: MenuMonsterComponent, children:[
       { path: 'create', component: MonsterCreateComponent },
-      { path: 'display', component: MonsterDisplayComponent },
+      { path: 'display/:id', component: MonsterDisplayComponent },
       { path: 'list', component: MonsterListComponent },
       { path: 'view', component: MonsterViewComponent }]},
       
     { path: 'menuItem', component: MenuItemComponent, children:[
       { path: 'create', component: ItemCreateComponent },
-      { path: 'display', component: ItemDisplayComponent },
+      { path: 'display/:id', component: ItemDisplayComponent },
       { path: 'list', component: ItemListComponent },
       { path: 'view', component: ItemViewComponent },
     ]},

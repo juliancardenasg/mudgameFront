@@ -28,6 +28,7 @@ import { MenuMonsterComponent } from './Menu/menu-monster/menu-monster.component
 import { MenuRoomComponent } from './Menu/menu-room/menu-room.component';
 import { MenuItemComponent } from './Menu/menu-item/menu-item.component';
 import { MenuDecorativeObjectComponent } from './Menu/menu-decorative-object/menu-decorative-object.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,7 @@ import { MenuDecorativeObjectComponent } from './Menu/menu-decorative-object/men
     MenuItemComponent,
     MenuDecorativeObjectComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
