@@ -1,1 +1,6 @@
-<p>decorativeobject-list works!</p>
+<h2>List</h2>
+<ul>
+    <li *ngFor="let decorativeObject of decorativeObjectList; let i = index">
+        <a [routerLink]="['/create/item/display',decorativeObject.id]">{{decorativeObject.name}}</a>
+    </li>
+</ul>

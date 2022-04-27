@@ -15,7 +15,9 @@ export class MonsterListComponent implements OnInit {
     
   ngOnInit() {
    let monster = new Monster(0,"Julian","gey",0,0,0,0,"","");
+   let monster1 = new Monster(1,"jul","gey",0,0,0,0,"","");
   this.monsterList.push(monster);
+  this.monsterList.push(monster1);
   // this.getMonsters();
   }
 

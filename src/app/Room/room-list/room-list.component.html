@@ -1,1 +1,6 @@
-<p>room-list works!</p>
+<h2>List</h2>
+<ul>
+    <li *ngFor="let room of roomList; let i = index">
+        <a [routerLink]="['/create/room/display',room.id]">{{room.name}}</a>
+    </li>
+</ul>

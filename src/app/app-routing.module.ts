@@ -54,16 +54,8 @@ const routes: Routes = [
       { path: 'list', component: DecorativeobjectListComponent },
       { path: 'view', component: DecorativeobjectViewComponent }]},
   
-    ]},
-
-
-
-  { path: 'decorativeobject', component: DecorativeobjectCreateComponent },
-
-
-  { path: 'room', component: RoomCreateComponent },
+    ]}
 ];
-//{path: 'admin', component: Admi}
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
