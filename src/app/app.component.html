@@ -1,25 +1,19 @@
-<h1>Welcome to Mud Game!</h1>
+<h1 class="centerTitle">Welcome to Mud Game!</h1>
 <div class="div1">
 
-    <div class="div2">
-        <h1>Menu home page!</h1>
-    </div>
     <nav>
-        <ul>
-            <li>
-                <a [routerLink]="['/']">Home</a>
-            </li>
+        <h2>Menu</h2>
+         <input id="toggle" type="checkbox" checked>
+      <ul>
+        <li><a [routerLink]="['/']">Home</a></li>
+        <li> <a [routerLink]="['/create']">Create/Design</a></li>
+        <li><a [routerLink]="['/gameDisplay']">Play!</a></li>
+      </ul>
+   </nav>
 
-            <li>
-                <a [routerLink]="['/create']">Create/Design</a>
-            </li>
+<div>
+  <router-outlet></router-outlet>
+</div>
 
-            <li>
-                <a [routerLink]="['/item']">Admin</a>
-            </li>
-        </ul>
-    </nav>
-    <!-- <app-home></app-home> -->
-    <router-outlet></router-outlet>
 </div>
 

@@ -23,6 +23,8 @@ import { RoomCreateComponent } from './Room/room-create/room-create.component';
 import { RoomDisplayComponent } from './Room/room-display/room-display.component';
 import { RoomListComponent } from './Room/room-list/room-list.component';
 import { RoomViewComponent } from './Room/room-view/room-view.component';
+import { GameDisplayComponent } from './game-display/game-display.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -54,7 +56,8 @@ const routes: Routes = [
       { path: 'list', component: DecorativeobjectListComponent },
       { path: 'view', component: DecorativeobjectViewComponent }]},
   
-    ]}
+    ]},
+    { path: 'gameDisplay', component: GameDisplayComponent }
 ];
 
 @NgModule({
