@@ -1,0 +1,40 @@
+.mainDiv {
+height: 700px;
+width: 100%;
+}
+h4 {
+    text-align: center;
+}
+.divMenu {
+    vertical-align: top;
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    background-color: grey;
+}
+
+.divLog{
+    border: 2px solid black;
+    display: inline-block;
+    width: 49%;
+    height: 100%;
+    background-color: grey;
+    vertical-align: top;
+}
+
+.divPlayer{
+        vertical-align: top;
+        border: 2px solid black;
+        display: inline-block;
+        width: 20%;
+        height: 100%;
+        background-color: grey;
+    
+}
+.menuItem{
+    background-color: grey;
+    border: 3px solid black;
+    height: 24%;
+    width: 100%;
+    overflow: auto;
+}

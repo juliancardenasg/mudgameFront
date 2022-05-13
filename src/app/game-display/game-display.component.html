@@ -1,1 +1,52 @@
-<p>game-display works!</p>
+<div class="mainDiv">
+    <div class="divMenu">
+
+        <div class="menuItem">
+            <h4>Room Items</h4>
+            <ul>
+                <li *ngFor="let item of items; let i = index">
+                    <span>{{item.name}}</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="menuItem">
+            <h4>Playes</h4>
+            <ul>
+                <li *ngFor="let player of players; let i = index">
+                    <span>{{player.name}}</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="menuItem">
+            <h4>Decorative objects</h4>
+            <ul>
+                <li *ngFor="let decorative of objects; let i = index">
+                    <span>{{decorative.name}}</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="menuItem">
+            <h4>Room</h4>
+            <ul>
+                <li *ngFor="let room of rooms; let i = index">
+                    <span>{{room.name}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="divLog">
+        
+    </div>
+
+    <div class="divPlayer">
+
+    </div>
+
+
+
+
+</div>
