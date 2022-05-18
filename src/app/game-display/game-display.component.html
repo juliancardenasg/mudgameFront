@@ -13,9 +13,9 @@
         <div class="menuItem">
             <h4>Playes</h4>
             <ul>
-                <li *ngFor="let player of players; let i = index">
+                <li *ngFor="let player of this.players; let i = index">
                     <span>{{player.name}}</span>
-                </li>
+                </li>   
             </ul>
         </div>
 
@@ -43,7 +43,69 @@
     </div>
 
     <div class="divPlayer">
+        <div class="player">
+            <div class="playerName">
+                <h4>{{this.player.name}}</h4>
+            </div>
+            <div class="playerStats">
+                <ul>
+                    <li>
+                        <span>Name:</span>
+                        <span>{{this.player.name}}</span>
+                    </li>
+                    <li>
+                        <span>last Update:</span>
+                        <span>{{this.player.lastUpdate}}</span>
+                    </li>
+                    <li>
+                        <span>attack level:</span>
+                        <span>{{this.player.attack_lvl}}</span>
+                    </li>
+                    <li>
+                        <span>defence level:</span>
+                        <span>{{this.player.defense_lvl}}</span>
+                    </li>
+                    <li>
+                        <span>size:</span>
+                        <span>{{this.player.size}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="monsterName">
+                <h4>{{this.monster.name}}</h4>
+            </div>
+            <div class="monsterStats">
+                <ul>
+                    <li>
+                        <span>Name:</span>
+                        <span>{{this.monster.name}}</span>
+                    </li>
 
+                    <li>
+                        <span>attack level:</span>
+                        <span>{{this.monster.attack_lvl}}</span>
+                    </li>
+                    <li>
+                        <span>defence level:</span>
+                        <span>{{this.monster.defense_lvl}}</span>
+                    </li>
+                    <li>
+                        <span>size</span>
+                        <span>{{this.monster.size}}</span>
+                    </li>
+                    <li>
+                        <span>last Update</span>
+                        <span>{{this.monster.lastUpdate}}</span>
+                    </li>
+
+
+
+       
+                </ul>
+            </div>
+        </div>
     </div>
 
 

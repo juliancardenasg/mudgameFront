@@ -5,6 +5,7 @@ import { Monster } from '../model/monster';
 import { Player } from '../model/player';
 import { Room } from '../model/room';
 import { DecorativeObjectService } from '../Shared/decorative-object.service';
+import { GameService } from '../Shared/game.service';
 import { ItemService } from '../Shared/item.service';
 import { MonsterService } from '../Shared/monster.service';
 import { RoomService } from '../Shared/room.service';
@@ -22,18 +23,37 @@ export class GameDisplayComponent implements OnInit {
   player: Player = new Player('', '', 0, 0, 0, 0);
   rooms: Room[] = [];
   constructor(
-    private roomService: RoomService,
-    private decorativeService: DecorativeObjectService,
-    private itemService: ItemService
+    private gameService: GameService
+    // private roomService: RoomService,
+    // private decorativeService: DecorativeObjectService,
+    // private itemService: ItemService
   ) {}
 
   ngOnInit(): void {
-    this.itemService.findAll().subscribe((data) => {
-      this.items = data;
-    });
 
-    this.decorativeService.findAll().subscribe((data) => {
+    this.gameService.loadRoomDecorativeObjects().subscribe((data) => {
       this.objects = data;
-    });
+    }
+    );
+
+    this.gameService.loadRoomItems().subscribe((data) => {
+      this.items = data;
+    }
+    );
+    this.gameService.loadRoomPlayer().subscribe((data) => {
+      this.players = data;
+      this.player = this.players[0];
+      console.log(data);
+    }
+    );
+    
+
+    // this.itemService.findAll().subscribe((data) => {
+    //   this.items = data;
+    // });
+
+    // this.decorativeService.findAll().subscribe((data) => {
+    //   this.objects = data;
+    // });
   }
 }
