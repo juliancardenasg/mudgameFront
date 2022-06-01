@@ -64,13 +64,33 @@ export class GameDisplayComponent implements OnInit {
 
   grabItem(item: Item) {
 
+    let log = this.log.nativeElement;
+    let div = this.render2.createElement('div');
+    let text;
+
     this.backpack.push(item);
     this.items.splice(this.items.indexOf(item), 1);
+
+    text = this.render2.createText(this.player.name+' has picked up the ' + item.name);
     
+    this.render2.appendChild(div, text);
+    this.render2.appendChild(log, div);
   }
+
+
   dropItem(item: Item) {
+    let log = this.log.nativeElement;
+    let div = this.render2.createElement('div');
+    let text;
+
+
     this.backpack.splice(this.backpack.indexOf(item), 1);
     this.items.push(item);
+
+    text = this.render2.createText(this.player.name+' has dropped the ' + item.name);
+    
+    this.render2.appendChild(div, text);
+    this.render2.appendChild(log, div);
   }
 
 
@@ -80,10 +100,44 @@ export class GameDisplayComponent implements OnInit {
   //attack
 
   attack() {
-    this.player.hitpoints -= this.monster.attack_lvl;
+
+    let log = this.log.nativeElement;
+    let div = this.render2.createElement('div');
+    let text;
+    
     this.monster.hit_points -= this.player.attack_level;
+    text = this.render2.createText(this.player.name + ' has attacked the monster for ' + this.player.attack_level + ' damage');
+    if(this.monster.hit_points <= 0) {
+      text = this.render2.createText(' You killed the monster');
+      this.render2.appendChild(div, text);
+      this.render2.appendChild(log, div);
+      return;
+    }
+    
+    this.render2.appendChild(div, text);
+    this.render2.appendChild(log, div);
+    this.reciveDamage(this.monster.attack_lvl);
+
+
   }
 
+  reciveDamage(damage: number) {
+    let log = this.log.nativeElement;
+    let div = this.render2.createElement('div');
+    let text;
+    this.player.hitpoints -= this.monster.attack_lvl;
+    text = this.render2.createText('You recived ' + damage + ' damage');
+    this.render2.appendChild(div, text);
+    this.render2.appendChild(log, div);
+  }
+
+  clearLog() {
+    let log = this.log.nativeElement;
+    
+    while(log.firstChild) {
+      log.removeChild(log.firstChild);
+    }
+  }
 
 
 

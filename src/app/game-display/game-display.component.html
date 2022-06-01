@@ -38,8 +38,16 @@
         </div>
     </div>
 
-    <div #log class="divLog">
-      
+    <div class="divLog">
+        <div class="btn-group">
+            <button class="button" *ngIf="this.monster.hit_points > 0" (click)="attack()">Attack</button>
+            <button class="button" (click)="clearLog()" >Clear Log</button>
+            <button class="button" >Boton</button>
+            <button class="button" >Boton</button>
+          </div>
+      <div #log class="actions">
+         
+      </div>
     </div>
 
     <div class="divPlayer">
@@ -93,7 +101,6 @@
                 <h4>{{this.monster.name}}</h4>
             </div>
             <div class="playerStats">
-                <button (click)="attack()">Attack</button>
                 <ul>
                     <li>
                         <span>Name:</span>
