@@ -5,7 +5,7 @@
             <h4>Room Items</h4>
             <ul>
                 <li *ngFor="let item of items; let i = index">
-                    <span>{{item.name}}</span>
+                    <span>{{item.name}} <button *ngIf="this.monster.hit_points <= 0" (click)="grabItem(item)">Grab</button></span>
                 </li>
             </ul>
         </div>
@@ -38,14 +38,14 @@
         </div>
     </div>
 
-    <div class="divLog">
-        
+    <div #log class="divLog">
+      
     </div>
 
     <div class="divPlayer">
         <div class="player">
             <div class="playerName">
-                <h4>{{this.player.name}}</h4>
+                <h4>Player: {{this.player.name}}</h4>
             </div>
             <div class="playerStats">
                 <ul>
@@ -59,12 +59,18 @@
                     </li>
                     <li>
                         <span>attack level:</span>
-                        <span>{{this.player.attack_lvl}}</span>
+                        <span>{{this.player.attack_level}}</span>
                     </li>
                     <li>
                         <span>defence level:</span>
-                        <span>{{this.player.defense_lvl}}</span>
+                        <span>{{this.player.defense_level}}</span>
                     </li>
+
+                    <li>
+                        <span>health:</span>
+                        <span>{{this.player.hitpoints}}</span>
+                    </li>
+
                     <li>
                         <span>size:</span>
                         <span>{{this.player.size}}</span>
@@ -72,11 +78,22 @@
                 </ul>
             </div>
         </div>
+
+        <div class="playerStats">
+            <h4>Backpack</h4>
+            <ul>
+                <li *ngFor="let item of backpack"> {{item.name}} <button *ngIf="this.monster.hit_points <= 0" (click)="dropItem(item)">Drop</button> </li> 
+            </ul>
+            
+
+        </div>
+
         <div class="menu">
             <div class="monsterName">
                 <h4>{{this.monster.name}}</h4>
             </div>
-            <div class="monsterStats">
+            <div class="playerStats">
+                <button (click)="attack()">Attack</button>
                 <ul>
                     <li>
                         <span>Name:</span>
@@ -99,10 +116,10 @@
                         <span>last Update</span>
                         <span>{{this.monster.lastUpdate}}</span>
                     </li>
-
-
-
-       
+                    <li>
+                        <span>Hit Points</span>
+                        <span>{{this.monster.hit_points}}</span>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -1,4 +1,4 @@
-.div1{
+.div11{
     background-color: #dda0a0;
     border-radius: 4px;
     padding: 20px;
@@ -6,6 +6,12 @@
 }
 .div2{
     background-color: #f17171;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.div1{
+    background-color: gray;
     border-radius: 4px;
     padding: 20px;
     margin-bottom: 20px;

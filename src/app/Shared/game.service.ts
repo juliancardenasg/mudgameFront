@@ -17,7 +17,7 @@ loadRoomItems(): Observable<Item[]>{
 }
 
 loadRoomMonster(): Observable<Monster>{
-  return this.http.get<Monster>('http://localhost:8090/game/monster');
+  return this.http.get<Monster>('http://localhost:8090/game/monsters');
 }
 
 loadRoomPlayer(): Observable<Player[]>{
@@ -27,6 +27,8 @@ loadRoomDecorativeObjects(): Observable<Decorativeobject[]>{
   return this.http.get<Decorativeobject[]>('http://localhost:8090/game/objetos');
 }
 
-
+loadRoomPLayerItems(): Observable<Item[]>{
+  return this.http.get<Item[]>('http://localhost:8090/game/playeritems');
+}
 
 }

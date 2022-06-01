@@ -11,9 +11,9 @@ export class Player {
     constructor(
         public name: string,
         public lastUpdate: string,
-        public attack_lvl: number,
-        public defense_lvl: number,
+        public attack_level: number,
+        public defense_level: number,
         public size: number,
-        public hit_points: number,
+        public hitpoints: number,
     ){}
 }

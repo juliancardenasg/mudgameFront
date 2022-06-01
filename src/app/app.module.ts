@@ -30,6 +30,7 @@ import { MenuItemComponent } from './Menu/menu-item/menu-item.component';
 import { MenuDecorativeObjectComponent } from './Menu/menu-decorative-object/menu-decorative-object.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GameDisplayComponent } from './game-display/game-display.component';
+import { LogicComponent } from './logic/logic.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { GameDisplayComponent } from './game-display/game-display.component';
     MenuItemComponent,
     MenuDecorativeObjectComponent,
     GameDisplayComponent,
+    LogicComponent,
   ],
   imports: [BrowserModule, AppRoutingModule,HttpClientModule],
   providers: [],

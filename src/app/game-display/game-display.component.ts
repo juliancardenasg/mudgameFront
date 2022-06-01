@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Decorativeobject } from '../model/decorativeobject';
 import { Item } from '../model/item';
 import { Monster } from '../model/monster';
@@ -16,14 +16,19 @@ import { RoomService } from '../Shared/room.service';
   styleUrls: ['./game-display.component.css'],
 })
 export class GameDisplayComponent implements OnInit {
+
+  @ViewChild('log') log!: ElementRef;
+
   items: Item[] = [];
   players: Player[] = [];
   monster: Monster = new Monster(0, '', '', 0, 0, 0, 0, '', '');
   objects: Decorativeobject[] = [];
   player: Player = new Player('', '', 0, 0, 0, 0);
   rooms: Room[] = [];
+  backpack: Item[] = [];
   constructor(
-    private gameService: GameService
+    private gameService: GameService,
+    private render2: Renderer2 
     // private roomService: RoomService,
     // private decorativeService: DecorativeObjectService,
     // private itemService: ItemService
@@ -46,14 +51,43 @@ export class GameDisplayComponent implements OnInit {
       console.log(data);
     }
     );
-    
+    this.gameService.loadRoomMonster().subscribe((data) => {
+      this.monster = data;
+    }
+    );
+    this.gameService.loadRoomPLayerItems().subscribe((data) => {
+      this.backpack = data;
+    }
+    );
 
-    // this.itemService.findAll().subscribe((data) => {
-    //   this.items = data;
-    // });
-
-    // this.decorativeService.findAll().subscribe((data) => {
-    //   this.objects = data;
-    // });
   }
+
+  grabItem(item: Item) {
+
+    this.backpack.push(item);
+    this.items.splice(this.items.indexOf(item), 1);
+    
+  }
+  dropItem(item: Item) {
+    this.backpack.splice(this.backpack.indexOf(item), 1);
+    this.items.push(item);
+  }
+
+
+
+  /* game logic*/
+
+  //attack
+
+  attack() {
+    this.player.hitpoints -= this.monster.attack_lvl;
+    this.monster.hit_points -= this.player.attack_level;
+  }
+
+
+
+
+
+
+
 }
