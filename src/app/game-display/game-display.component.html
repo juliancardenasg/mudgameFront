@@ -5,7 +5,7 @@
             <h4>Room Items</h4>
             <ul>
                 <li *ngFor="let item of items; let i = index">
-                    <span>{{item.name}} <button *ngIf="this.monster.hit_points <= 0" (click)="grabItem(item)">Grab</button></span>
+                    <span id="{{item.name}}">{{item.name}} <button *ngIf="this.monster.hit_points <= 0" (click)="grabItem(item)">Grab</button></span>
                 </li>
             </ul>
         </div>
@@ -40,8 +40,8 @@
 
     <div class="divLog">
         <div class="btn-group">
-            <button class="button" *ngIf="this.monster.hit_points > 0" (click)="attack()">Attack</button>
-            <button class="button" (click)="clearLog()" >Clear Log</button>
+            <button id="attack" class="button" *ngIf="this.monster.hit_points > 0" (click)="attack()">Attack</button>
+            <button id="clearlg" class="button" (click)="clearLog()" >Clear Log</button>
             <button class="button" >Boton</button>
             <button class="button" >Boton</button>
           </div>
@@ -90,7 +90,7 @@
         <div class="playerStats">
             <h4>Backpack</h4>
             <ul>
-                <li *ngFor="let item of backpack"> {{item.name}} <button *ngIf="this.monster.hit_points <= 0" (click)="dropItem(item)">Drop</button> </li> 
+                <li id="{{item.name}}" *ngFor="let item of backpack"> {{item.name}} <button *ngIf="this.monster.hit_points <= 0" (click)="dropItem(item)">Drop</button> </li> 
             </ul>
             
 
@@ -98,9 +98,11 @@
 
         <div class="menu">
             <div class="monsterName">
-                <h4>{{this.monster.name}}</h4>
+                <h4>Monster: {{this.monster.name}}</h4>
             </div>
             <div class="playerStats">
+                <button hidden *ngIf="this.monster.hit_points > 0" (click)="attack()">Attack</button>
+                <button hidden (click)="clearLog()" >Clear Log</button>
                 <ul>
                     <li>
                         <span>Name:</span>
